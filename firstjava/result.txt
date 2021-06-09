@@ -1,0 +1,11 @@
+
+C:\Users\user\Desktop\javafun>type nul > MyFirstjava.java
+
+C:\Users\user\Desktop\javafun>javac  MyFirstjava.java
+
+C:\Users\user\Desktop\javafun>java  MyFirstjava
+My name is Hoda Al shobaki
+I am old enough
+My Hometown is Hebron
+
+C:\Users\user\Desktop\javafun>
