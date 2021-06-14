@@ -1,6 +1,13 @@
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
+
+// Create an array with the following values: 3,5,1,2,7,9,8,13,25,32.
+//  Print the sum of all numbers in the array. Also have the function 
+//  return an array that only includes numbers that are greater than 10
+//   (e.g. when you pass the array above, it should
+//  return an array with the values of 13,25,32)
 public class PuzzleJava{
     public void Create(int[]arr){
         ArrayList<Integer> numbers = new ArrayList<Integer>();
@@ -30,6 +37,11 @@ public class PuzzleJava{
     }
 
     // ****************
+    // Create an array with the following values: Nancy, Jinichi,
+    //  Fujibayashi, Momochi, Ishikawa. Shuffle the array and print the 
+    //  name of each person. Have the method also return 
+    // an array with names that are longer than 5 characters.
+
     public void shuffling(String[] arr){
         ArrayList<String> newarray = new ArrayList<String>();
         ArrayList<String> newarray1 = new ArrayList<String>();  
@@ -45,30 +57,46 @@ public class PuzzleJava{
 
     }
 // **************
+
+// Create an array that contains all 26 letters of the alphabet
+//(this array must have 26 values). Shuffle the array and, after
+//shuffling, display the last letter from the array. Have it also
+// display the first letter of the array. If the first letter 
+// in the array is a vowel,
+//  have it display a message.
+
 public void shuffleAlphabet(){
-    ArrayList<String> alphaArr = new ArrayList<String>();
-    for(char alpha = 'A'; alpha <= 'Z'; alpha++){
-        alphaArr.add(Character.toString(alpha));
+    ArrayList<String> alphA = new ArrayList<String>();
+    for(char i = 'A'; i <= 'Z';i++){
+        alphA.add(Character.toString(i));
     }
-    System.out.println(alphaArr);
-    Collections.shuffle(alphaArr);
-    System.out.println(alphaArr);
+    System.out.println(alphA);
+    Collections.shuffle(alphA);
+    System.out.println(alphA);
 
-    System.out.println("First letter : " + alphaArr.get(0));
-    System.out.println("Last letter : " + alphaArr.get(25));
-    String letter = alphaArr.get(0);
+    System.out.println("First Character : " + alphA.get(0));
+    System.out.println("Last Character : " + alphA.get(25));
+    String chara= alphA.get(0);
 
-    if("AEIOU".indexOf(letter) > 0){
-        System.out.println("The first letter is vowel!");
+    if("AEIOU".indexOf(chara) > 0){
+        System.out.println("The first Character is vowel!");
     }   
 }
-public void randNumber2(){
-    ArrayList<Integer> randNums2 = new ArrayList<Integer>();
+// Generate and return an array with 10 random numbers between 55-100.
+// To get a random integer, you can use the nextInt method of the
+// Random class.
+// Random Class documentation
+// showing the smallest number in the beginning).
+//  Display all the numbers in the array. Next, display the minimum value 
+// in the array as well as the maximum value
+
+public void randNumber(){
+    ArrayList<Integer> randNums= new ArrayList<Integer>();
     int min = 101;
     int max = 55;
     for(int i = 0; i < 10; i++){
         int num2 = ThreadLocalRandom.current().nextInt(55, 101);
-        randNums2.add(num2);
+        randNums.add(num2);
         if(num2 < min){
             min = num2;
         }
@@ -76,21 +104,26 @@ public void randNumber2(){
             max= num2;
         }
     }
-    Collections.sort(randNums2);
-    System.out.println(randNums2);
-    System.out.println("Smallest randomized number is: " + min);
-    System.out.println("Largest randomized number is: " + max);
+    Collections.sort(randNums);
+    System.out.println(randNums);
+    System.out.println("Smallest number is: " + min);
+    System.out.println("Largest number is: " + max);
 }
-
+//  Create a random string that is 5 characters long.
 public void randomString(){
+     // ArrayList<String> randomString=new ArrayList<string>;
+    // byte[] array = new byte[5];
+    // new Random().nextBytes(array);
+    // String generatedString = new String(array, Charset.forName("UTF-8"));
+
     Random rand = new Random();
     StringBuilder randString = new StringBuilder();
     String alphaNumeric = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
     for(int i = 0; i < 5; i++){
         randString.append(alphaNumeric.charAt(rand.nextInt(alphaNumeric.length())));
     }
-    String finalString = randString.toString();
-    System.out.println(finalString);
+    String newString = randString.toString();
+    System.out.println(newString);
 }
 
 public void randomStringOfStrings(){

@@ -16,11 +16,11 @@ public class PuzzleJavaTest{
         PuzzleJava testData=new PuzzleJava(); 
         testData.shuffleAlphabet();
             // *******
-        PuzzleJava testData1=new PuzzleJava(); 
-        testData1.randNumber();
+        // PuzzleJava testData2=new PuzzleJava(); 
+        // testData1.randNumber();
         // **************
         PuzzleJava testData2=new PuzzleJava(); 
-        testData2.randNumber2();
+        testData2.randNumber();
         // **************
         PuzzleJava testData3=new PuzzleJava(); 
         testData3.randomString();
